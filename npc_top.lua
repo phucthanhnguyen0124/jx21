@@ -1,4 +1,4 @@
--- Event ®ua top
+-- Event Â®ua top
 -- Created by TuanNA5
 Include("\\script\\lib\\globalfunctions.lua");
 Include("\\script\\vng\\lib\\vnglib_textdata.lua");
@@ -9,57 +9,58 @@ Include("\\script\\vng\\lib\\vnglib_award.lua");
 Include("\\script\\vng\\newserver\\topbanghoi.lua");
 Include("\\script\\vng\\newserver\\hoatdong.lua");
 
-strNpcName = "<color=green>Ngäa Long<color>: "
+strNpcName = "<color=green>NgÃ¤a Long<color>: "
 szLogTitle = "Top Ngoa Long"
 szStartDate = "25-07-2014"
-szEndDate = "14-09 -2014"
-szServerName = "Ngäa Long"
+szEndDate = "14-09 -3014"
+szServerName = "NgÃ¤a Long"
 
 function main()
 	local nDate = tonumber(date("%Y%m%d"))
 	
 --	if GetCreateTime() <= TOP_CREATED_ROLE then
---		Talk(1,"",strNpcName.."Thêi gian t¹o tµi kho¶n kh«ng hîp lÖ nªn kh«ng thÓ nhËn th­ëng!")
+--		Talk(1,"",strNpcName.."ThÃªi gian tÂ¹o tÂµi khoÂ¶n khÂ«ng hÃ®p lÃ– nÂªn khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng!")
 --		return
 --	end
 
-	if GetGlbValue(GLB_TSK_SERVER_ID) ~= TOP_SERVER_ID or GetByte(GetTask(TSK_SERVER_ID), TSK_SERVER_ID_CUR) ~= TOP_SERVER_ID then
-		Talk(1,"",strNpcName.."Ng­¬i kh«ng ph¶i thÇn d©n bæn quèc nªn kh«ng thÓ nhËn th­ëng!")
-		return
-	end
+-- T?m th?i b? ki?m tra qu?c t?ch d? test
+	-- if GetGlbValue(GLB_TSK_SERVER_ID) ~= TOP_SERVER_ID or GetByte(GetTask(TSK_SERVER_ID), TSK_SERVER_ID_CUR) ~= TOP_SERVER_ID then
+	--	Talk(1,"",strNpcName.."NgÂ­Â¬i khÂ«ng phÂ¶i thÃ‡n dÂ©n bÃ¦n quÃ¨c nÂªn khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng!")
+	--	return
+	-- end
 	local tSay = {}
 	if nDate >= TOP_START_DATE and nDate <= TOP_END_DATE then
---		tinsert(tSay,1,"NhËn phÇn th­ëng theo ®¼ng cÊp/get_award_by_level")
---		tinsert(tSay,"NhËn th­ëng l­u ph¸i Thóy Yªn Linh N÷ cÊp 92-99/get_route_award_by_level_menu")
-		tinsert(tSay,"NhËn th­ëng cao thñ ®Çu tiªn ®¹t 1.400.000 ®iÓm c«ng tr¹ng/confirm_get_1mil_Hornor_award")
---		tinsert(tSay,"NhËn phÇn th­ëng ¦u ®·i server " .. szServerName .. "/Say_NhanUuDai")
-		tinsert(tSay,"NhËn phÇn th­ëng cao thñ Top 1 mçi hÖ ph¸i/get_top_faction_award")
-		tinsert(tSay,"NhËn phÇn th­ëng 3 nh©n sÜ ®Çu tiªn mçi phe ®¹t 860.000 c«ng tr¹ng/confirm_get_top_Hornor_award")
---		tinsert(tSay,"§¨ng kı nhËn th­ëng top 100 chuyÓn sinh 1 cÊp 99/#CS_TopAward(1)")
---		tinsert(tSay,"§¨ng kı nhËn th­ëng top 100 chuyÓn sinh 2 cÊp 99/#CS_TopAward(2)")
---		tinsert(tSay,"§¨ng kı nhËn th­ëng top 100 chuyÓn sinh 3 cÊp 99/#CS_TopAward(3)")
---		tinsert(tSay,"Ho¹t ®éng "..szServerName.."/NewServer_HoatDong_Menu")
+		tinsert(tSay,1,"NhÃ‹n phÃ‡n thÂ­Ã«ng theo Â®Â¼ng cÃŠp/get_award_by_level")
+--		tinsert(tSay,"NhÃ‹n thÂ­Ã«ng lÂ­u phÂ¸i ThÃ³y YÂªn Linh NÃ· cÃŠp 92-99/get_route_award_by_level_menu")
+		tinsert(tSay,"NhÃ‹n thÂ­Ã«ng cao thÃ± Â®Ã‡u tiÂªn Â®Â¹t 1.400.000 Â®iÃ“m cÂ«ng trÂ¹ng/confirm_get_1mil_Hornor_award")
+--		tinsert(tSay,"NhÃ‹n phÃ‡n thÂ­Ã«ng Â¦u Â®Â·i server " .. szServerName .. "/Say_NhanUuDai")
+		tinsert(tSay,"NhÃ‹n phÃ‡n thÂ­Ã«ng cao thÃ± Top 1 mÃ§i hÃ– phÂ¸i/get_top_faction_award")
+		tinsert(tSay,"NhÃ‹n phÃ‡n thÂ­Ã«ng 3 nhÂ©n sÃœ Â®Ã‡u tiÂªn mÃ§i phe Â®Â¹t 860.000 cÂ«ng trÂ¹ng/confirm_get_top_Hornor_award")
+--		tinsert(tSay,"Â§Â¨ng kÃ½ nhÃ‹n thÂ­Ã«ng top 100 chuyÃ“n sinh 1 cÃŠp 99/#CS_TopAward(1)")
+--		tinsert(tSay,"Â§Â¨ng kÃ½ nhÃ‹n thÂ­Ã«ng top 100 chuyÃ“n sinh 2 cÃŠp 99/#CS_TopAward(2)")
+--		tinsert(tSay,"Â§Â¨ng kÃ½ nhÃ‹n thÂ­Ã«ng top 100 chuyÃ“n sinh 3 cÃŠp 99/#CS_TopAward(3)")
+--		tinsert(tSay,"HoÂ¹t Â®Ã©ng "..szServerName.."/NewServer_HoatDong_Menu")
 	end
-	tinsert(tSay,"Bang héi danh gi¸/TopBangHoi_Menu")
-	tinsert(tSay,"Xem t×nh h×nh nhËn th­ëng top hÖ ph¸i/get_top_faction_info")
-	tinsert(tSay,"Xem t×nh h×nh nhËn th­ëng top 3 chiÕn tr­êng/get_top_nation_info")
---	tinsert(tSay,"Xem t×nh h×nh ®¨ng kı nhËn th­ëng mËt tŞch/get_top100_award_info")
---	tinsert(tSay,"Ph¸t th­ëng bang héi/PhatThuongBangHoi")
-	tinsert(tSay,"Ta biÕt råi/dlgover")	
+	tinsert(tSay,"Bang hÃ©i danh giÂ¸/TopBangHoi_Menu")
+	tinsert(tSay,"Xem tÃ—nh hÃ—nh nhÃ‹n thÂ­Ã«ng top hÃ– phÂ¸i/get_top_faction_info")
+	tinsert(tSay,"Xem tÃ—nh hÃ—nh nhÃ‹n thÂ­Ã«ng top 3 chiÃ•n trÂ­Ãªng/get_top_nation_info")
+--	tinsert(tSay,"Xem tÃ—nh hÃ—nh Â®Â¨ng kÃ½ nhÃ‹n thÂ­Ã«ng mÃ‹t tÃch/get_top100_award_info")
+--	tinsert(tSay,"PhÂ¸t thÂ­Ã«ng bang hÃ©i/PhatThuongBangHoi")
+	tinsert(tSay,"Ta biÃ•t rÃ¥i/dlgover")	
 	
 	if nDate >= TOP_START_DATE then
-		local strSay = strNpcName.."Ho¹t ®éng <color=yellow>Truy C«ng L·nh Th­ëng<color> diÔn ra tõ ngµy<color=red> "..szStartDate.." ®Õn 24:00 "..szEndDate.."<color>. Trong thêi gian nµy, quı ®ång ®¹o cã thÓ ®Õn gÆp ta ®Ó nhËn c¸c phÇn th­ëng hÊp dÉn. Th«ng tin chi tiÕt quı ®ång ®¹o vui lßng xem t¹i <color=blue>http://volam2.zing.vn<color>"
+		local strSay = strNpcName.."HoÂ¹t Â®Ã©ng <color=yellow>Truy CÂ«ng LÂ·nh ThÂ­Ã«ng<color> diÃ”n ra tÃµ ngÂµy<color=red> "..szStartDate.." Â®Ã•n 24:00 "..szEndDate.."<color>. Trong thÃªi gian nÂµy, quÃ½ Â®Ã¥ng Â®Â¹o cÃ£ thÃ“ Â®Ã•n gÃ†p ta Â®Ã“ nhÃ‹n cÂ¸c phÃ‡n thÂ­Ã«ng hÃŠp dÃ‰n. ThÂ«ng tin chi tiÃ•t quÃ½ Â®Ã¥ng Â®Â¹o vui lÃŸng xem tÂ¹i <color=blue>http://volam2.zing.vn<color>"
 		Say(strSay,getn(tSay),tSay)
 	end
 end
 
 function get_award_by_level()
 	local tSay = {}
-	tSay[0] = strNpcName.."Trong thêi gian tõ ngµy<color=red> "..szStartDate.." ®Õn 24:00 "..szEndDate.."<color>, khi ®¹t ®­îc c¸c mèc ®iÒu kiÖn nhËn th­ëng (xem thªm trªn trang chñ), ®ång ®¹o cã thÓ ®Õn gÆp ta ®Ó nhËn phÇn th­ëng."
+	tSay[0] = strNpcName.."Trong thÃªi gian tÃµ ngÂµy<color=red> "..szStartDate.." Â®Ã•n 24:00 "..szEndDate.."<color>, khi Â®Â¹t Â®Â­Ã®c cÂ¸c mÃ¨c Â®iÃ’u kiÃ–n nhÃ‹n thÂ­Ã«ng (xem thÂªm trÂªn trang chÃ±), Â®Ã¥ng Â®Â¹o cÃ£ thÃ“ Â®Ã•n gÃ†p ta Â®Ã“ nhÃ‹n phÃ‡n thÂ­Ã«ng."
 	for i=1,getn(tb_topserver_award_limit) do
 		if tb_topserver_award_limit[i] ~= nil then
 			if tb_topserver_award_limit[i][4] >= gf_GetTaskByte(TSK_TOP_LEVEL,1)  then
-				tinsert(tSay, "Ta muèn nhËn phÇn th­ëng cÊp ®é "..i.."/#conf_get_award_by_level("..i..")")
+				tinsert(tSay, "Ta muÃ¨n nhÃ‹n phÃ‡n thÂ­Ã«ng cÃŠp Â®Ã© "..i.."/#conf_get_award_by_level("..i..")")
 			end
 		end
 	end
@@ -67,133 +68,133 @@ function get_award_by_level()
 	if nDate >= TOP_START_DATE and nDate <= TOP_END_DATE then
 		gf_PageSay(tSay, 1, 6)
 	else
-		Talk(1,"",strNpcName.."Ho¹t ®éng ®· kÕt thóc!")
+		Talk(1,"",strNpcName.."HoÂ¹t Â®Ã©ng Â®Â· kÃ•t thÃ³c!")
 	end			
 end
 
 
--- Truy c«ng l·nh th­ëng theo ®¼ng cÊp
+-- Truy cÂ«ng lÂ·nh thÂ­Ã«ng theo Â®Â¼ng cÃŠp
 function conf_get_award_by_level(nLevel)
 	local nRoute = GetPlayerRoute()
 	if nRoute == 0 then
-		Talk(1, "", strNpcName.."C¸c h¹ ch­a gia nhËp m«n ph¸i kh«ng thÓ nhËn th­ëng.");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a gia nhÃ‹p mÂ«n phÂ¸i khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.");
 		return
 	end
 	if tFactionSkillInfo[nRoute] == 0 then
-		Talk(1, "", strNpcName.."C¸c h¹ ch­a gia nhËp hÖ ph¸i kh«ng thÓ nhËn th­ëng.");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a gia nhÃ‹p hÃ– phÂ¸i khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.");
 		return
 	end
 	if GetLevel() < nLevel then
-		Talk(1, "", strNpcName.."§¼ng cÊp cña c¸c h¹ ch­a ®ñ "..nLevel..", kh«ng thÓ nhËn th­ëng.");
+		Talk(1, "", strNpcName.."Â§Â¼ng cÃŠp cÃ±a cÂ¸c hÂ¹ chÂ­a Â®Ã± "..nLevel..", khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.");
 		return
 	end
 --	if CheckMaxSkill55() == 0 then
---		Talk(1, "", strNpcName.."C¸c h¹ ch­a häc ®Çy ®ñ vâ c«ng cÊp 55, kh«ng thÓ nhËn th­ëng.");
+--		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a hÃ¤c Â®Ã‡y Â®Ã± vÃ¢ cÂ«ng cÃŠp 55, khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.");
 --		return
 --	end
 	if gf_GetTaskByte(TSK_TOP_LEVEL,1) > tb_topserver_award_limit[nLevel][4] then
-		Talk(1, "", strNpcName.."C¸c h¹ ®· nhËn phÇn th­ëng nµy råi. Kh«ng thÓ nhËn tiÕp ®­îc n÷a!");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ Â®Â· nhÃ‹n phÃ‡n thÂ­Ã«ng nÂµy rÃ¥i. KhÂ«ng thÃ“ nhÃ‹n tiÃ•p Â®Â­Ã®c nÃ·a!");
 		return
 	end	
 	local nAwardLevel = TopCheckLevel()
 	if nAwardLevel == 0 or nAwardLevel < nLevel then
-		Talk(1, "", strNpcName.."Kh«ng ®ñ ®iÒu kiÖn nhËn phÇn th­ëng nµy. Vui lßng kiÓm tra l¹i c¸c ®iÒu kiÖn ®¼ng cÊp, danh väng, s­ m«n, c«ng tr¹ng hoÆc c¸c h¹ ch­a nhËn c¸c phÇn th­ëng tr­íc.");
+		Talk(1, "", strNpcName.."KhÂ«ng Â®Ã± Â®iÃ’u kiÃ–n nhÃ‹n phÃ‡n thÂ­Ã«ng nÂµy. Vui lÃŸng kiÃ“m tra lÂ¹i cÂ¸c Â®iÃ’u kiÃ–n Â®Â¼ng cÃŠp, danh vÃ¤ng, sÂ­ mÂ«n, cÂ«ng trÂ¹ng hoÃ†c cÂ¸c hÂ¹ chÂ­a nhÃ‹n cÂ¸c phÃ‡n thÂ­Ã«ng trÂ­Ã­c.");
 		return 0
 	end
 	warning_get_award_by_level(nLevel, nAwardLevel);
 end
 
 
--- Truy c«ng l·nh th­ëng theo ®¼ng cÊp
+-- Truy cÂ«ng lÂ·nh thÂ­Ã«ng theo Â®Â¼ng cÃŠp
 function warning_get_award_by_level(nWantLevel, nLevel)
-	Say("X¸c nhËn muèn nhËn phÇn th­ëng nµy",
+	Say("XÂ¸c nhÃ‹n muÃ¨n nhÃ‹n phÃ‡n thÂ­Ã«ng nÂµy",
 		2,
-		"Ta muèn nhËn /#confirm_conf_get_award_by_level("..nWantLevel..")",
-		"§Ó ta suy nghÜ l¹i./dlgover");
+		"Ta muÃ¨n nhÃ‹n /#confirm_conf_get_award_by_level("..nWantLevel..")",
+		"Â§Ã“ ta suy nghÃœ lÂ¹i./dlgover");
 end
 
 
--- Truy c«ng l·nh th­ëng theo ®¼ng cÊp
+-- Truy cÂ«ng lÂ·nh thÂ­Ã«ng theo Â®Â¼ng cÃŠp
 function confirm_conf_get_award_by_level(nLevel)
 	local nNation = GetGlbValue(GLB_TSK_SERVER_ID)
 	local nNationality = GetByte(GetTask(TSK_SERVER_ID), TSK_SERVER_ID_CUR)
 	
-	-- Check quèc tŞch
+	-- Check quÃ¨c tÃch
 	if nNationality ~= nNation then
-		Talk(1, "", "Ng­¬i kh«ng ph¶i lµ thÇn d©n bæn quèc nªn kh«ng thÓ nhËn th­ëng!")
+		Talk(1, "", "NgÂ­Â¬i khÂ«ng phÂ¶i lÂµ thÃ‡n dÂ©n bÃ¦n quÃ¨c nÂªn khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng!")
 		return
 	end
 	
-	-- Check hµnh trang
+	-- Check hÂµnh trang
 	if gf_Judge_Room_Weight(14,500)~=1 then
-		Talk(1,"","Hµnh trang hoÆc søc lùc kh«ng ®ñ, vui lßng s¾p xÕp l¹i.")
+		Talk(1,"","HÂµnh trang hoÃ†c sÃ¸c lÃ¹c khÂ«ng Â®Ã±, vui lÃŸng sÂ¾p xÃ•p lÂ¹i.")
 		return
 	end
 	
 	if GetLevel() < 76 then
-		Talk(1, "", strNpcName.."§¼ng cÊp cña c¸c h¹ ch­a ®ñ 76, kh«ng thÓ nhËn th­ëng.");
+		Talk(1, "", strNpcName.."Â§Â¼ng cÃŠp cÃ±a cÂ¸c hÂ¹ chÂ­a Â®Ã± 76, khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.");
 		return
 	end
 	if gf_GetTaskByte(TSK_TOP_LEVEL,1) ~= tb_topserver_award_limit[nLevel][4] then
-		Talk(1, "", strNpcName.."C¸c h¹ ®· nhËn phÇn th­ëng nµy råi. Kh«ng thÓ nhËn tiÕp ®­îc n÷a!");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ Â®Â· nhÃ‹n phÃ‡n thÂ­Ã«ng nÂµy rÃ¥i. KhÂ«ng thÃ“ nhÃ‹n tiÃ•p Â®Â­Ã®c nÃ·a!");
 		return
 	end
 	local nRoute = GetPlayerRoute()
 	if tFactionSkillInfo[nRoute] == 0 then
-		Talk(1, "", strNpcName.."C¸c h¹ ch­a gia nhËp hÖ ph¸i kh«ng thÓ nhËn th­ëng.");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a gia nhÃ‹p hÃ– phÂ¸i khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.");
 		return
 	end
 --	if GetReputation() < 100 then
---		Talk(1, "", strNpcName.."C¸c h¹ ch­a ®ñ 100 ®iÓm Danh väng.");
+--		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a Â®Ã± 100 Â®iÃ“m Danh vÃ¤ng.");
 --		return
 --	end
 --
 --	if GetTask(336) < 50 then
---		Talk(1, "", strNpcName.."C¸c h¹ ch­a ®ñ 50 ®iÓm S­ m«n.");
+--		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a Â®Ã± 50 Â®iÃ“m SÂ­ mÂ«n.");
 --		return
 --	end
 	
 	local nRet, nItemIdx = 0,0	
 	if nLevel == 83 then
 		if GetCash() < 9990000 then
-			Talk(1, "", strNpcName.."C¸c h¹ kh«ng cã ®ñ 999 vµng.");
+			Talk(1, "", strNpcName.."CÂ¸c hÂ¹ khÂ«ng cÃ£ Â®Ã± 999 vÂµng.");
 			return 0
 		end
 	end
 	
-	-- Bæ sung ®iÒu kiÖn cho c¸c Level sau
+	-- BÃ¦ sung Â®iÃ’u kiÃ–n cho cÂ¸c Level sau
 	if nLevel >= 99 then
 		if GetReputation() < 3000 then
-			Talk(1,"","C¸c h¹ kh«ng ®ñ 3000 ®iÓm danh väng")
+			Talk(1,"","CÂ¸c hÂ¹ khÂ«ng Â®Ã± 3000 Â®iÃ“m danh vÃ¤ng")
 			return
 		end
 		if GetTask(336) < 3000 then
-			Talk(1,"","C¸c h¹ kh«ng ®ñ 2003 ®iÓm danh väng s­ m«n.")
+			Talk(1,"","CÂ¸c hÂ¹ khÂ«ng Â®Ã± 2003 Â®iÃ“m danh vÃ¤ng sÂ­ mÂ«n.")
 			return
 		end
 		if GetItemCount(2,1,30230) < 300 then
-			Talk(1,"","C¸c h¹ kh«ng ®ñ xu vËt phÈm nhËn th­ëng.")
+			Talk(1,"","CÂ¸c hÂ¹ khÂ«ng Â®Ã± xu vÃ‹t phÃˆm nhÃ‹n thÂ­Ã«ng.")
 			return
 		end
 		if GetExp() < 300000000 then
-			Talk(1,"","C¸c h¹ kh«ng ®ñ ®iÓm kinh nghiÖm nhËn th­ëng.")
+			Talk(1,"","CÂ¸c hÂ¹ khÂ«ng Â®Ã± Â®iÃ“m kinh nghiÃ–m nhÃ‹n thÂ­Ã«ng.")
 			return
 		end
 	elseif nLevel >= 91 then
 		if TopCheckSkill(tFactionSkillInfo,20) == 0 then
-			Talk(1, "", strNpcName.."C¸c h¹ ch­a luyÖn thµnh vâ c«ng trÊn ph¸i 20 cÊp.");
+			Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a luyÃ–n thÂµnh vÃ¢ cÂ«ng trÃŠn phÂ¸i 20 cÃŠp.");
 			return 0
 		end
 		if GetReputation() < 500 then
-			Talk(1,"","C¸c h¹ kh«ng ®ñ 500 ®iÓm danh väng")
+			Talk(1,"","CÂ¸c hÂ¹ khÂ«ng Â®Ã± 500 Â®iÃ“m danh vÃ¤ng")
 			return 0
 		end
 		if GetTask(336) < 500 then
-			Talk(1,"","C¸c h¹ kh«ng ®ñ 500 ®iÓm danh väng s­ m«n.")
+			Talk(1,"","CÂ¸c hÂ¹ khÂ«ng Â®Ã± 500 Â®iÃ“m danh vÃ¤ng sÂ­ mÂ«n.")
 			return 0
 		end
 		if GetCash() < 500000 then
-			Talk(1, "", strNpcName.."C¸c h¹ kh«ng cã ®ñ 50 vµng.");
+			Talk(1, "", strNpcName.."CÂ¸c hÂ¹ khÂ«ng cÃ£ Â®Ã± 50 vÂµng.");
 			return 0
 		end
 	end
@@ -209,15 +210,15 @@ function confirm_conf_get_award_by_level(nLevel)
 	if nLevel >= 99 then
 		ModifyReputation(-3000,0)
 		SetTask(336, GetTask(336) - 3000)
-		Msg2Player("B¹n bŞ trõ 3000 ®iÓm s­ m«n!")
+		Msg2Player("BÂ¹n bÃ trÃµ 3000 Â®iÃ“m sÂ­ mÂ«n!")
 		DelItem(2,1,30230,300)
-		Msg2Player("B¹n bŞ trõ 300 xu vËt phÈm!")
+		Msg2Player("BÂ¹n bÃ trÃµ 300 xu vÃ‹t phÃˆm!")
 		ModifyExp(-300000000)
-		Msg2Player("B¹n bŞ trõ 300.000.000 ®iÓm kinh nghiÖm!")
+		Msg2Player("BÂ¹n bÃ trÃµ 300.000.000 Â®iÃ“m kinh nghiÃ–m!")
 	elseif  nLevel > 90 then
 		ModifyReputation(-500,0)
 		SetTask(336, GetTask(336) - 500)
-		Msg2Player("B¹n bŞ trõ 500 ®iÓm s­ m«n!")
+		Msg2Player("BÂ¹n bÃ trÃµ 500 Â®iÃ“m sÂ­ mÂ«n!")
 		Pay(500000)
 	end
 	
@@ -226,62 +227,62 @@ function confirm_conf_get_award_by_level(nLevel)
 		tb_item = tb_topserver_award_item[nLevel][i]
 		if tb_item[1] == 1 then -- item
 			if tb_item[4] == 0 then
-				gf_AddItemEx2(tb_item[3],tb_item[2], szLogTitle, "nhËn th­ëng cÊp "..nLevel)
+				gf_AddItemEx2(tb_item[3],tb_item[2], szLogTitle, "nhÃ‹n thÂ­Ã«ng cÃŠp "..nLevel)
 			elseif tb_item[4] > 0 then
-		 		gf_AddItemEx2(tb_item[3],tb_item[2], szLogTitle, "nhËn th­ëng cÊp "..nLevel, tb_item[4])
+		 		gf_AddItemEx2(tb_item[3],tb_item[2], szLogTitle, "nhÃ‹n thÂ­Ã«ng cÃŠp "..nLevel, tb_item[4])
 		 	end
 		elseif tb_item[1] == 2 then -- command
 			dostring(format(tb_item[2],tb_item[3]))
-			WriteLogEx(szLogTitle,"nhËn th­ëng cÊp "..nLevel,tb_item[3],tb_item[2])
+			WriteLogEx(szLogTitle,"nhÃ‹n thÂ­Ã«ng cÃŠp "..nLevel,tb_item[3],tb_item[2])
 		elseif tb_item[1] == 3 then -- table
 			local tb_Award = tb_item[2]
 			if tb_item[4] == 0 then
-				gf_AddItemEx2(tb_Award[nRoute][2],tb_Award[nRoute][1], szLogTitle,"nhËn th­ëng cÊp "..nLevel)			
+				gf_AddItemEx2(tb_Award[nRoute][2],tb_Award[nRoute][1], szLogTitle,"nhÃ‹n thÂ­Ã«ng cÃŠp "..nLevel)			
 			elseif tb_item[4] > 0 then
-		 		gf_AddItemEx2(tb_Award[nRoute][2],tb_Award[nRoute][1], szLogTitle,"nhËn th­ëng cÊp "..nLevel, tb_item[4])
+		 		gf_AddItemEx2(tb_Award[nRoute][2],tb_Award[nRoute][1], szLogTitle,"nhÃ‹n thÂ­Ã«ng cÃŠp "..nLevel, tb_item[4])
 		 	end
-		 	-- Chän vò khİ ViÖt Yªn cho TL tôc gia
+		 	-- ChÃ¤n vÃ² khÃ ViÃ–t YÂªn cho TL tÃ´c gia
 		 	if nRoute == 2 and nLevel == 292 then
-		 		Say("Ta cã 2 mãn vò khİ dµnh cho c¸c h¹, h·y chän vò khİ phï hîp:", 2, "ViÖt Yªn Phi Tinh §ao/#ChonVuKhiThieuLam(1)", "ViÖt Yªn Phi Tinh C«n/#ChonVuKhiThieuLam(2)")
+		 		Say("Ta cÃ£ 2 mÃ£n vÃ² khÃ dÂµnh cho cÂ¸c hÂ¹, hÂ·y chÃ¤n vÃ² khÃ phÃ¯ hÃ®p:", 2, "ViÃ–t YÂªn Phi Tinh Â§ao/#ChonVuKhiThieuLam(1)", "ViÃ–t YÂªn Phi Tinh CÂ«n/#ChonVuKhiThieuLam(2)")
 		 	end
 		else
-			Talk(1, "", strNpcName.."§¼ng cÊp kh«ng ®óng!");
-			WriteLogEx(szLogTitle,"®¼ng cÊp kh«ng ®óng???");
+			Talk(1, "", strNpcName.."Â§Â¼ng cÃŠp khÂ«ng Â®Ã³ng!");
+			WriteLogEx(szLogTitle,"Â®Â¼ng cÃŠp khÂ«ng Â®Ã³ng???");
 			return
 		end
 	end
 	
 	local szChuyensinh = " "
 	if floor(nLevel/100)>0 then
-		local szChuyensinh = " (chuyÓn sinh "..floor(nLevel/100)..")"
+		local szChuyensinh = " (chuyÃ“n sinh "..floor(nLevel/100)..")"
 	end
-	Say(strNpcName.."Chóc mõng c¸c h¹ nhËn ®­îc phÇn th­ëng "..mod(nLevel,100).." "..szChuyensinh,0)
+	Say(strNpcName.."ChÃ³c mÃµng cÂ¸c hÂ¹ nhÃ‹n Â®Â­Ã®c phÃ‡n thÂ­Ã«ng "..mod(nLevel,100).." "..szChuyensinh,0)
 end
 
---Chän Vò khİ ThiÕu L©m
+--ChÃ¤n VÃ² khÃ ThiÃ•u LÂ©m
 function ChonVuKhiThieuLam(nOption)
 	if nOption==1 then
-		gf_AddItemEx2({0,3,30001,1,1,-1,-1,-1,-1,-1,-1,-1,13},"ViÖt Yªn Phi Tinh §ao",1)
+		gf_AddItemEx2({0,3,30001,1,1,-1,-1,-1,-1,-1,-1,-1,13},"ViÃ–t YÂªn Phi Tinh Â§ao",1)
 	else
-		gf_AddItemEx2({0,5,30002,1,1,-1,-1,-1,-1,-1,-1,-1,13},"ViÖt Yªn Phi Tinh C«n",1)
+		gf_AddItemEx2({0,5,30002,1,1,-1,-1,-1,-1,-1,-1,-1,13},"ViÃ–t YÂªn Phi Tinh CÂ«n",1)
 	end
 end
 
 
----- NhËn th­ëng top chuyÓn sinh theo m«n ph¸i  ----------
+---- NhÃ‹n thÂ­Ã«ng top chuyÃ“n sinh theo mÂ«n phÂ¸i  ----------
 function get_top_faction_award()
 	local nDate = tonumber(date("%Y%m%d"));
 	if nDate >= TOP_START_DATE and nDate <= TOP_END_DATE then	
-		Say(strNpcName.."NhËn phÇn th­ëng cao thñ hoµn thµnh <color=red>phôc sinh cÊp 96<color> ®Çu tiªn (theo hÖ ph¸i)",
+		Say(strNpcName.."NhÃ‹n phÃ‡n thÂ­Ã«ng cao thÃ± hoÂµn thÂµnh <color=red>phÃ´c sinh cÃŠp 96<color> Â®Ã‡u tiÂªn (theo hÃ– phÂ¸i)",
 			2,
-			"Ta muèn nhËn/confirm_get_top_faction_award",
-			"§Ó ta suy nghÜ l¹i./dlgover");
+			"Ta muÃ¨n nhÃ‹n/confirm_get_top_faction_award",
+			"Â§Ã“ ta suy nghÃœ lÂ¹i./dlgover");
 	else
-		Talk(1,"",strNpcName.."Ho¹t ®éng ®· kÕt thóc!")
+		Talk(1,"",strNpcName.."HoÂ¹t Â®Ã©ng Â®Â· kÃ•t thÃ³c!")
 	end
 end
 
---- NhËn th­ëng top 1 hÖ ph¸i ----
+--- NhÃ‹n thÂ­Ã«ng top 1 hÃ– phÂ¸i ----
 function confirm_get_top_faction_award()
 	-- Dieu kien nhan thuong
 	local nMonPhai = GetPlayerRoute()
@@ -293,47 +294,47 @@ function confirm_get_top_faction_award()
 	local nChuyenSinh = gf_GetTaskByte(TRANSLIFE_TASK_ID, TRANSLIFE_BYTE_COUNT) + GetPlayerRebornParam(0)
 	local tbRoute = {[2]=1,[3]=1,[4]=1,[6]=1,[8]=1,[9]=1,[11]=1,[12]=1,[14]=1,[15]=1,[17]=1,[18]=1,[20]=1,[21]=1,[23]=1,[29]=1,[30]=1}
 	if nNationality ~= nNation then
-		Talk(1, "", strNpcName .. "C¸c h¹ kh«ng ph¶i lµ thÇn d©n bæn quèc nªn kh«ng thÓ nhËn th­ëng!")
+		Talk(1, "", strNpcName .. "CÂ¸c hÂ¹ khÂ«ng phÂ¶i lÂµ thÃ‡n dÂ©n bÃ¦n quÃ¨c nÂªn khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng!")
 		return 0
 	end
 	
 	if tbRoute[nMonPhai] ~= 1 then
-		Talk(1,"",strNpcName .. "C¸c h¹ ch­a chän hÖ ph¸i nªn kh«ng thÓ nhËn th­ëng.")
+		Talk(1,"",strNpcName .. "CÂ¸c hÂ¹ chÂ­a chÃ¤n hÃ– phÂ¸i nÂªn khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.")
 		return 0
 	end
 	
 	if GetBit(GetTask(TSK_TOP_AWARD),TSK_TOP_TRANSLIFE1) == 1 then
-		Talk(1, "", strNpcName.."C¸c h¹ ®· nhËn phÇn th­ëng top 1 theo hÖ ph¸i råi.");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ Â®Â· nhÃ‹n phÃ‡n thÂ­Ã«ng top 1 theo hÃ– phÂ¸i rÃ¥i.");
 		return 0
 	end
 	
 	if nChuyenSinh ~= 6 then
-		Talk(1,"",strNpcName .. "HiÖn t¹i C¸c h¹ ch­a hoµn Phôc sinh 1!")
+		Talk(1,"",strNpcName .. "HiÃ–n tÂ¹i CÂ¸c hÂ¹ chÂ­a hoÂµn PhÃ´c sinh 1!")
 		return 0
 	end
 	
 	if GetLevel() < 96 then
-		Talk(1, "", strNpcName .. "C¸c h¹ h·y phÊn ®Êu lªn cÊp ®é 96 råi quay l¹i nhĞ!");
+		Talk(1, "", strNpcName .. "CÂ¸c hÂ¹ hÂ·y phÃŠn Â®ÃŠu lÂªn cÃŠp Â®Ã© 96 rÃ¥i quay lÂ¹i nhÃ!");
 		return 0
 	end
 	
 	if nRep < 25000 or nFaction < 25000 or nHor < 500000  then
-		Talk(1, "", strNpcName.."C¸c h¹ ch­a ®ñ ®iÒu kiÖn nhËn th­ëng. Vui lßng kiÓm tra ®iÒu kiÖn danh väng, s­ m«n, c«ng tr¹ng.");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a Â®Ã± Â®iÃ’u kiÃ–n nhÃ‹n thÂ­Ã«ng. Vui lÃŸng kiÃ“m tra Â®iÃ’u kiÃ–n danh vÃ¤ng, sÂ­ mÂ«n, cÂ«ng trÂ¹ng.");
 		return 0
 	end
 
 	if GetItemCount(2,1,30230) < 5000 then
-		Talk(1,"",strNpcName .. "C¸c h¹ kh«ng ®em ®ñ 5.000 xu vËt phÈm.")
+		Talk(1,"",strNpcName .. "CÂ¸c hÂ¹ khÂ«ng Â®em Â®Ã± 5.000 xu vÃ‹t phÃˆm.")
 		return 0
 	end
 		
 --	if TopCheckSkill(tFactionSkillInfo,20) == 0 then
---		Talk(1, "", strNpcName.."C¸c h¹ ch­a luyÖn thµnh vâ c«ng trÊn ph¸i 20 cÊp.");
+--		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a luyÃ–n thÂµnh vÃ¢ cÂ«ng trÃŠn phÂ¸i 20 cÃŠp.");
 --		return	
 --	end
 
 	if gf_Judge_Room_Weight(15, 300, strNpcName) == 0 then
-		Talk(1,"",strNpcName .. "Hµnh trang hoÆc søc lùc kh«ng ®ñ, vui lßng s¾p xÕp l¹i hµnh trang.")
+		Talk(1,"",strNpcName .. "HÂµnh trang hoÃ†c sÃ¸c lÃ¹c khÂ«ng Â®Ã±, vui lÃŸng sÂ¾p xÃ•p lÂ¹i hÂµnh trang.")
 		return
 	end
 	
@@ -341,33 +342,33 @@ function confirm_get_top_faction_award()
 	LIB_txtData:LoadData()
 	local nFactionRank = LIB_txtData.tbTextData[tonumber(nMonPhai)]
 	if nFactionRank >= 1 then
-		Talk(1, "", strNpcName.."PhÇn th­ëng nµy ®· cã chñ nh©n!");
+		Talk(1, "", strNpcName.."PhÃ‡n thÂ­Ã«ng nÂµy Â®Â· cÃ£ chÃ± nhÂ©n!");
 		return	
 	end
 	
 	if LIB_txtData:AddValue(tonumber(nMonPhai),1,5) == 1 then
 		LIB_Award.szLogTitle = "NHAN THUONG DUA TOP "..szLOGSERVERNAME
-		LIB_Award.szLogAction = "nhËn"
-		-- Bit 1 nhËn phÇn th­ëng chuyÓn sinh 1
+		LIB_Award.szLogAction = "nhÃ‹n"
+		-- Bit 1 nhÃ‹n phÃ‡n thÂ­Ã«ng chuyÃ“n sinh 1
 		gf_SetTaskBit(TSK_TOP_AWARD,TSK_TOP_TRANSLIFE1,1)
 		local nItemLevel = 0
 		DelItem(2,1,30230,5000)
 --		if nFactionRank == 0 then
 			local tbAward = {
 				item = {
-						{gdp={0,102,8844,1,1,-1,-1,-1,-1,-1,-1,-1}, name = "Huy Hoµng QuËt Khëi"}, 
-						{gdp={0,102,8845,1,1,-1,-1,-1,-1,-1,-1,-1}, name = "Vinh Dù QuËt Khëi"}, 
-						{gdp={0,105,30022,1,1,-1,-1,-1,-1,-1,-1,-1}, name = "Kim Mao Ng­u B¶o B¶o"}}
+						{gdp={0,102,8844,1,1,-1,-1,-1,-1,-1,-1,-1}, name = "Huy HoÂµng QuÃ‹t KhÃ«i"}, 
+						{gdp={0,102,8845,1,1,-1,-1,-1,-1,-1,-1,-1}, name = "Vinh DÃ¹ QuÃ‹t KhÃ«i"}, 
+						{gdp={0,105,30022,1,1,-1,-1,-1,-1,-1,-1,-1}, name = "Kim Mao NgÂ­u BÂ¶o BÂ¶o"}}
 			}
 			TraoMatTichCaoCap20(3, nMonPhai)
 			LIB_Award:Award(tbAward)
 --		end
-		Talk(1,"","NhËn thµnh c«ng phÇn th­ëng h¹ng "..(nFactionRank+1).." m«n ph¸i "..tb_Route_Name[tonumber(nMonPhai)] .. ".")
+		Talk(1,"","NhÃ‹n thÂµnh cÂ«ng phÃ‡n thÂ­Ã«ng hÂ¹ng "..(nFactionRank+1).." mÂ«n phÂ¸i "..tb_Route_Name[tonumber(nMonPhai)] .. ".")
 	end
 end
 
 
--- NhËn th­ëng top c«ng tr¹ng
+-- NhÃ‹n thÂ­Ã«ng top cÂ«ng trÂ¹ng
 function confirm_get_top_Hornor_award()
 	local nRep = GetReputation();
 	local nFaction = GetTask(336);
@@ -383,37 +384,37 @@ function confirm_get_top_Hornor_award()
 	local nNationality = GetByte(GetTask(TSK_SERVER_ID), TSK_SERVER_ID_CUR)
 	
 	if nNationality ~= nNation then
-		Talk(1, "", strNpcName.."C¸c h¹ kh«ng ph¶i lµ thÇn d©n bæn quèc nªn kh«ng thÓ nhËn th­ëng!")
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ khÂ«ng phÂ¶i lÂµ thÃ‡n dÂ©n bÃ¦n quÃ¨c nÂªn khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng!")
 		return 0
 	end
 	
 	if nPhucSinh < 1 or GetLevel() < 94 then
-		Talk(1, "", strNpcName.."C¸c h¹ ch­a ®ñ ®iÒu kiÖn phôc sinh cÊp ®é 94!")
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a Â®Ã± Â®iÃ’u kiÃ–n phÃ´c sinh cÃŠp Â®Ã© 94!")
 		return 0
 	end
 	
 	if nRep < 25000 or nFaction < 25000 or abs(nHor) < 860000  then
-		Talk(1, "", strNpcName.."C¸c h¹ ch­a ®ñ ®iÒu kiÖn nhËn th­ëng. Vui lßng kiÓm tra ®iÒu kiÖn danh väng, s­ m«n, c«ng tr¹ng.");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a Â®Ã± Â®iÃ’u kiÃ–n nhÃ‹n thÂ­Ã«ng. Vui lÃŸng kiÃ“m tra Â®iÃ’u kiÃ–n danh vÃ¤ng, sÂ­ mÂ«n, cÂ«ng trÂ¹ng.");
 		return 0
 	end
 	
 	if abs(GetTask(704)) < 5 then
-		Talk(1,"",strNpcName.."C¸c h¹ ch­a ®ñ ®iÒu kiÖn nhËn thuëng. Vui lßng kiÓm tra ®iÒu kiÖn Qu©n hµm.");
+		Talk(1,"",strNpcName.."CÂ¸c hÂ¹ chÂ­a Â®Ã± Â®iÃ’u kiÃ–n nhÃ‹n thuÃ«ng. Vui lÃŸng kiÃ“m tra Â®iÃ’u kiÃ–n QuÂ©n hÂµm.");
 		return
 	end
 	
 	if GetItemCount(2,1,30230) < 19000 then
-		Talk(1,"", strNpcName.."C¸c h¹ kh«ng ®em ®ñ 19000 xu vËt phÈm, hay lµ ®· ®Ó quªn trong r­¬ng?")
+		Talk(1,"", strNpcName.."CÂ¸c hÂ¹ khÂ«ng Â®em Â®Ã± 19000 xu vÃ‹t phÃˆm, hay lÂµ Â®Â· Â®Ã“ quÂªn trong rÂ­Â¬ng?")
 		return
 	end
 	
 	if gf_Judge_Room_Weight(15, 300, strNpcName) == 0 then
-		Talk(1,"", strNpcName.."Hµnh trang hoÆc søc lùc kh«ng ®ñ, vui lßng s¾p xÕp l¹i hµnh trang.")
+		Talk(1,"", strNpcName.."HÂµnh trang hoÃ†c sÃ¸c lÃ¹c khÂ«ng Â®Ã±, vui lÃŸng sÂ¾p xÃ•p lÂ¹i hÂµnh trang.")
 		return
 	end
 	
 	if GetBit(GetTask(TSK_TOP_AWARD),TSK_TOP_HORNOR) == 1 then
-		Talk(1, "", strNpcName.."C¸c h¹ ®· nhËn phÇn th­ëng top 5 c«ng tr¹ng chiÕn tr­êng råi.");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ Â®Â· nhÃ‹n phÃ‡n thÂ­Ã«ng top 5 cÂ«ng trÂ¹ng chiÃ•n trÂ­Ãªng rÃ¥i.");
 		return	
 	end
 	
@@ -421,16 +422,16 @@ function confirm_get_top_Hornor_award()
 	LIB_txtData:LoadData()
 	local nNationRank = LIB_txtData.tbTextData[tonumber(nTongLieu)]
 	if nNationRank >= 3 then
-		Talk(1, "", strNpcName.."PhÇn th­ëng 3 cao thñ ®Çu tiªn c«ng tr¹ng ®¹t 860.000 ®· cã chñ nh©n!");
+		Talk(1, "", strNpcName.."PhÃ‡n thÂ­Ã«ng 3 cao thÃ± Â®Ã‡u tiÂªn cÂ«ng trÂ¹ng Â®Â¹t 860.000 Â®Â· cÃ£ chÃ± nhÂ©n!");
 		return	
 	end
 	
 	if LIB_txtData:AddValue(tonumber(nTongLieu),1,3) == 1 then
 		DelItem(2,1,30230,19000)
 		LIB_Award.szLogTitle = "NHAN THUONG DUA TOP "..szLOGSERVERNAME
-		LIB_Award.szLogAction = "nhËn"
---		local tbAward = {item = {{gdp={2,1,9977,1,1}, name = "Qu©n C«ng Huy Hoµng", nExpired = 90*24*60*60}}}
---		Bit 1 nhËn phÇn th­ëng top c«ng tr¹ng
+		LIB_Award.szLogAction = "nhÃ‹n"
+--		local tbAward = {item = {{gdp={2,1,9977,1,1}, name = "QuÂ©n CÂ«ng Huy HoÂµng", nExpired = 90*24*60*60}}}
+--		Bit 1 nhÃ‹n phÃ‡n thÂ­Ã«ng top cÂ«ng trÂ¹ng
 		gf_SetTaskBit(TSK_TOP_AWARD,TSK_TOP_HORNOR,1)
 		TraoLoiHoTuongQuan(0)
 --		if nNationRank == 0 then
@@ -443,12 +444,12 @@ function confirm_get_top_Hornor_award()
 --		LIB_txtData:Init("danhsachnhanthuong.txt")
 --		local szLogAward = GetAccount().."	"..GetName().."	"..GetPlayerRoute().."	"..nTongLieu.."	"..nChuyenSinh.."	TOP790790	"..date("%Y-%m-%d %H:%M:%S")
 --		LIB_txtData:AddLine(szLogAward)
-		Talk(1,"","NhËn thµnh c«ng phÇn th­ëng h¹ng "..(nNationRank+1).." c«ng tr¹ng phe "..tb_Nation_Name[tonumber(nTongLieu)]..".")
+		Talk(1,"","NhÃ‹n thÂµnh cÂ«ng phÃ‡n thÂ­Ã«ng hÂ¹ng "..(nNationRank+1).." cÂ«ng trÂ¹ng phe "..tb_Nation_Name[tonumber(nTongLieu)]..".")
 	end
 end
 
 
--- NhËn th­ëng top 1.400.000 c«ng tr¹ng
+-- NhÃ‹n thÂ­Ã«ng top 1.400.000 cÂ«ng trÂ¹ng
 function confirm_get_1mil_Hornor_award()
 	local nRep = GetReputation();
 	local nFaction = GetTask(336);
@@ -464,37 +465,37 @@ function confirm_get_1mil_Hornor_award()
 	local nNationality = GetByte(GetTask(TSK_SERVER_ID), TSK_SERVER_ID_CUR)
 	
 	if nNationality ~= nNation then
-		Talk(1, "", strNpcName.."C¸c h¹ kh«ng ph¶i lµ thÇn d©n bæn quèc nªn kh«ng thÓ nhËn th­ëng!")
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ khÂ«ng phÂ¶i lÂµ thÃ‡n dÂ©n bÃ¦n quÃ¨c nÂªn khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng!")
 		return 0
 	end
 	
 	if nPhucSinh < 1 or GetLevel() < 95 then
-		Talk(1, "", strNpcName.."C¸c h¹ ch­a phôc sinh cÊp ®é 95, h·y cè g¾ng thªm..");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a phÃ´c sinh cÃŠp Â®Ã© 95, hÂ·y cÃ¨ gÂ¾ng thÂªm..");
 		return 0
 	end
 	
 	if nRep < 30000 or nFaction < 30000 or abs(nHor) < 1400000  then
-		Talk(1, "", strNpcName.."C¸c h¹ ch­a ®ñ ®iÒu kiÖn nhËn th­ëng. Vui lßng kiÓm tra ®iÒu kiÖn danh väng, s­ m«n, c«ng tr¹ng.");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a Â®Ã± Â®iÃ’u kiÃ–n nhÃ‹n thÂ­Ã«ng. Vui lÃŸng kiÃ“m tra Â®iÃ’u kiÃ–n danh vÃ¤ng, sÂ­ mÂ«n, cÂ«ng trÂ¹ng.");
 		return 0
 	end
 	
 	if abs(GetTask(704)) < 6 then
-		Talk(1,"",strNpcName.."C¸c h¹, phÇn th­ëng nµy chØ ®­îc trao tÆng cho nguyªn so¸i, C¸c h¹ h·y cè g¾ng thªm nhĞ...");
+		Talk(1,"",strNpcName.."CÂ¸c hÂ¹, phÃ‡n thÂ­Ã«ng nÂµy chÃ˜ Â®Â­Ã®c trao tÃ†ng cho nguyÂªn soÂ¸i, CÂ¸c hÂ¹ hÂ·y cÃ¨ gÂ¾ng thÂªm nhÃ...");
 		return 0
 	end
 	
 	if GetItemCount(2,1,30230) < 39000 then
-		Talk(1,"", strNpcName.."C¸c h¹ kh«ng ®em ®ñ 39.000 xu vËt phÈm, hay lµ ®· ®Ó quªn trong r­¬ng?")
+		Talk(1,"", strNpcName.."CÂ¸c hÂ¹ khÂ«ng Â®em Â®Ã± 39.000 xu vÃ‹t phÃˆm, hay lÂµ Â®Â· Â®Ã“ quÂªn trong rÂ­Â¬ng?")
 		return 0
 	end
 	
 	if gf_Judge_Room_Weight(15, 300, strNpcName) == 0 then
-		Talk(1,"", strNpcName.."Hµnh trang hoÆc søc lùc kh«ng ®ñ, vui lßng s¾p xÕp l¹i hµnh trang.")
+		Talk(1,"", strNpcName.."HÂµnh trang hoÃ†c sÃ¸c lÃ¹c khÂ«ng Â®Ã±, vui lÃŸng sÂ¾p xÃ•p lÂ¹i hÂµnh trang.")
 		return
 	end
 	
 	if GetBit(GetTask(TSK_TOP_AWARD),TSK_TOP_1MIL_HORNOR) == 1 then
-		Talk(1, "", strNpcName.."C¸c h¹ ®· nhËn phÇn th­ëng 1.400.000  c«ng tr¹ng chiÕn tr­êng råi.");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ Â®Â· nhÃ‹n phÃ‡n thÂ­Ã«ng 1.400.000  cÂ«ng trÂ¹ng chiÃ•n trÂ­Ãªng rÃ¥i.");
 		return	
 	end
 	
@@ -511,17 +512,17 @@ function confirm_get_1mil_Hornor_award()
 	
 --	local nNationRank = LIB_txtData.tbTextData[tonumber(nTongLieu)]
 	if nNationRank >= 1 then
-		Talk(1, "", strNpcName.."PhÇn th­ëng nµy ®· cã chñ nh©n!");
+		Talk(1, "", strNpcName.."PhÃ‡n thÂ­Ã«ng nÂµy Â®Â· cÃ£ chÃ± nhÂ©n!");
 		return	
 	end
 	
 	if LIB_txtData:AddValue(tonumber(nTongLieu),1,1) == 1 then
 		DelItem(2,1,30230,39000)
 		LIB_Award.szLogTitle = "NHAN THUONG DUA TOP "..szLOGSERVERNAME
-		LIB_Award.szLogAction = "nhËn"
-		-- Bit 1 nhËn phÇn th­ëng top c«ng tr¹ng
---		local tbAward = {item = {{gdp={2,1,9977,1,1}, name = "Qu©n C«ng Huy Hoµng", nExpired = 90*24*60*60}}}
-		local tbChienTuong = {item = {{gdp={0,105,30033,1,4,-1,-1,-1,-1,-1,-1,-1}, name = "ChiÕn T­îng Nguyªn So¸i"}}}
+		LIB_Award.szLogAction = "nhÃ‹n"
+		-- Bit 1 nhÃ‹n phÃ‡n thÂ­Ã«ng top cÂ«ng trÂ¹ng
+--		local tbAward = {item = {{gdp={2,1,9977,1,1}, name = "QuÂ©n CÂ«ng Huy HoÂµng", nExpired = 90*24*60*60}}}
+		local tbChienTuong = {item = {{gdp={0,105,30033,1,4,-1,-1,-1,-1,-1,-1,-1}, name = "ChiÃ•n TÂ­Ã®ng NguyÂªn SoÂ¸i"}}}
 		gf_SetTaskBit(TSK_TOP_AWARD,TSK_TOP_1MIL_HORNOR,1)
 		TraoLoiHoNguyenSoai(0)
 		LIB_Award:Award(tbChienTuong)
@@ -532,76 +533,76 @@ function confirm_get_1mil_Hornor_award()
 --		LIB_txtData:Init("danhsachnhanthuong.txt")
 --		local szLogAward = GetAccount().."	"..GetName().."	"..GetPlayerRoute().."	"..nTongLieu.."	"..nChuyenSinh.."	TOP1500000	"..date("%Y-%m-%d %H:%M:%S")
 --		LIB_txtData:AddLine(szLogAward)
-		Talk(1,"","NhËn thµnh c«ng phÇn th­ëng 1.400.000 c«ng tr¹ng")
+		Talk(1,"","NhÃ‹n thÂµnh cÂ«ng phÃ‡n thÂ­Ã«ng 1.400.000 cÂ«ng trÂ¹ng")
 	end
 end
 
 
--- Xem th«ng tin top 100 nhËn mËt tŞch
+-- Xem thÂ«ng tin top 100 nhÃ‹n mÃ‹t tÃch
 function get_top100_award_info()
 	LIB_txtData:Init("soluongphanthuong.txt")
 	LIB_txtData:LoadData()
-	local szList = "Sè l­îng nhËn th­ëng mËt tŞch ®· ®¨ng kı: \n"	
+	local szList = "SÃ¨ lÂ­Ã®ng nhÃ‹n thÂ­Ã«ng mÃ‹t tÃch Â®Â· Â®Â¨ng kÃ½: \n"	
 	local szList2 = szList
 	local i = 0
 	for i=1, getn(LIB_txtData.tbTextData) do
-		szList = szList.."ChuyÓn sinh "..i..": "..LIB_txtData.tbTextData[i].."/100\n"
+		szList = szList.."ChuyÃ“n sinh "..i..": "..LIB_txtData.tbTextData[i].."/100\n"
 	end
 	Talk(1,"",szList)	
 end
 
 
--- Xem th«ng tin top m«n ph¸i
+-- Xem thÂ«ng tin top mÂ«n phÂ¸i
 function get_top_faction_info()
 	LIB_txtData:Init("top_route.txt")
 	LIB_txtData:LoadData()
-	local szList = "Th«ng tin phÇn th­ëng top 1 hÖ ph¸i ®· nhËn: \n"	
+	local szList = "ThÂ«ng tin phÃ‡n thÂ­Ã«ng top 1 hÃ– phÂ¸i Â®Â· nhÃ‹n: \n"	
 	local szList2 = szList
 	local i = 0
 	for i=1, getn(LIB_txtData.tbTextData) do
 		if tb_Route_Name[i] ~= "" then
 			if i < 14 then
-				szList = szList.."Cao thñ <color=green>"..tb_Route_Name[i].."<color>: "..LIB_txtData.tbTextData[i].."\n"
+				szList = szList.."Cao thÃ± <color=green>"..tb_Route_Name[i].."<color>: "..LIB_txtData.tbTextData[i].."\n"
 			else
-				szList2 = szList2.."Cao thñ <color=green>"..tb_Route_Name[i].."<color>: "..LIB_txtData.tbTextData[i].."\n"
+				szList2 = szList2.."Cao thÃ± <color=green>"..tb_Route_Name[i].."<color>: "..LIB_txtData.tbTextData[i].."\n"
 			end
 		end
 	end
 	Talk(2,"",szList, szList2)	
 end
 
--- Xem th«ng tin top qu©n c«ng
+-- Xem thÂ«ng tin top quÂ©n cÂ«ng
 function get_top_nation_info()
 	LIB_txtData:Init("top_nation.txt")
 	LIB_txtData:LoadData()
 	for i=1,getn(LIB_txtData.tbTextData) do
 		print(LIB_txtData.tbTextData[i])
 	end
-	local szList = "Th«ng tin phÇn th­ëng top 3 vinh dù chiÕn tr­êng: \n"	
+	local szList = "ThÂ«ng tin phÃ‡n thÂ­Ã«ng top 3 vinh dÃ¹ chiÃ•n trÂ­Ãªng: \n"	
 	local i = 0
 	for i=1, getn(LIB_txtData.tbTextData) do		
-		szList = szList.."Cao thñ phe <color=green>"..tb_Nation_Name[i].."<color>: "..LIB_txtData.tbTextData[i].."\n"
+		szList = szList.."Cao thÃ± phe <color=green>"..tb_Nation_Name[i].."<color>: "..LIB_txtData.tbTextData[i].."\n"
 	end
 	Talk(1,"",szList)	
 end
 
--- NhËn ­u ®·i server míi
+-- NhÃ‹n Â­u Â®Â·i server mÃ­i
 function Say_NhanUuDai()
 	local nNation = GetGlbValue(GLB_TSK_SERVER_ID)
 	if nNation~=TOP_SERVER_ID then
-		Talk(1,"","ChØ cã server " .. szServerName .. " míi nhËn ®­îc phÇn th­ëng")
+		Talk(1,"","ChÃ˜ cÃ£ server " .. szServerName .. " mÃ­i nhÃ‹n Â®Â­Ã®c phÃ‡n thÂ­Ã«ng")
 		return
 	end
-	tbSay = {"Ta chØ ghĞ ngang/dlgover"}
+	tbSay = {"Ta chÃ˜ ghÃ ngang/dlgover"}
 	for i=getn(tbDieuKienUuDai),1,-1 do
-		tinsert(tbSay,1,"CÊp "..tbDieuKienUuDai[i]["nLevel"]..": "..tbDieuKienUuDai[i]["name"].." cÇn "..tbDieuKienUuDai[i]["tbitem"][4].." "..tbDieuKienUuDai[i]["tbitem"][5].."/#UuDaiServerMoi("..i..")")
+		tinsert(tbSay,1,"CÃŠp "..tbDieuKienUuDai[i]["nLevel"]..": "..tbDieuKienUuDai[i]["name"].." cÃ‡n "..tbDieuKienUuDai[i]["tbitem"][4].." "..tbDieuKienUuDai[i]["tbitem"][5].."/#UuDaiServerMoi("..i..")")
 	end
-	Say("Mêi c¸c h¹ nhËn phÇn t­ëng t­¬ng xøng",getn(tbSay), unpack(tbSay))
+	Say("MÃªi cÂ¸c hÂ¹ nhÃ‹n phÃ‡n tÂ­Ã«ng tÂ­Â¬ng xÃ¸ng",getn(tbSay), unpack(tbSay))
 end
 
 function UuDaiServerMoi(nOrder)
 	if type(tbDieuKienUuDai[nOrder]) ~= "table" then
-		Talk(1,"","Kh«ng cã phÇn th­ëng cho cÊp ®é nµy")
+		Talk(1,"","KhÂ«ng cÃ£ phÃ‡n thÂ­Ã«ng cho cÃŠp Â®Ã© nÂµy")
 		return
 	end
 	
@@ -610,31 +611,31 @@ function UuDaiServerMoi(nOrder)
 	local nRoute = GetPlayerRoute()
 	
 	if tbAward["nLevel"] > nLevel then
-		Talk(1,"","C¸c h¹ ch­a ®ñ cÊp ®é nhËn th­ëng")
+		Talk(1,"","CÂ¸c hÂ¹ chÂ­a Â®Ã± cÃŠp Â®Ã© nhÃ‹n thÂ­Ã«ng")
 		return
 	end
 	
 	if gf_Judge_Room_Weight(tbAward["nSlot"] ,tbAward["nWeight"] ) ~= 1 then
-		Talk(1,"","Hµnh trang hoÆc søc lùc kh«ng ®ñ, vui lßng s¾p xÕp l¹i.")
+		Talk(1,"","HÂµnh trang hoÃ†c sÃ¸c lÃ¹c khÂ«ng Â®Ã±, vui lÃŸng sÂ¾p xÃ•p lÂ¹i.")
 		return
 	end
 	
 	if gf_GetTaskBit(TSK_TOP_LEVEL, tbAward["nBit"]) == 1 then
-		Talk(1,"","C¸c h¹ ®· nhËn phÇn th­ëng ­u ®·i nµy råi.")
+		Talk(1,"","CÂ¸c hÂ¹ Â®Â· nhÃ‹n phÃ‡n thÂ­Ã«ng Â­u Â®Â·i nÂµy rÃ¥i.")
 		return 1
 	end
 	
 	if nRoute == 0 then
-		Talk(1,"","C¸c h¹ ch­a gia nhËp hÖ ph¸i nªn kh«ng thÓ nhËn th­ëng.");
+		Talk(1,"","CÂ¸c hÂ¹ chÂ­a gia nhÃ‹p hÃ– phÂ¸i nÂªn khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.");
 		return
 	end
 	
 	if GetItemCount(tbAward["tbitem"][1], tbAward["tbitem"][2], tbAward["tbitem"][3]) < tbAward["tbitem"][4] then
-		Talk(1,"","C¸c h¹ kh«ng ®em ®ñ "..tbAward["tbitem"][5]..", h·y kiÓm tra l¹i hµnh trang.")
+		Talk(1,"","CÂ¸c hÂ¹ khÂ«ng Â®em Â®Ã± "..tbAward["tbitem"][5]..", hÂ·y kiÃ“m tra lÂ¹i hÂµnh trang.")
 		return
 	end
 	
-	-- Trao th­ëng ¦u ®·i
+	-- Trao thÂ­Ã«ng Â¦u Â®Â·i
 --	if nOrder == 10 then
 --		Say_NhanVuKhiVietYen()
 --		return
@@ -643,7 +644,7 @@ function UuDaiServerMoi(nOrder)
 --	if nOrder < 10 then
 		if DelItem(tbAward["tbitem"][1], tbAward["tbitem"][2], tbAward["tbitem"][3], tbAward["tbitem"][4])==1 then
 			LIB_Award.szLogTitle = "Uu Dai "..szLOGSERVERNAME
-			LIB_Award.szLogAction = "nhËn"
+			LIB_Award.szLogAction = "nhÃ‹n"
 			gf_SetTaskBit(TSK_TOP_LEVEL, tbAward["nBit"], 1)
 			if nOrder == 1 then
 				GiveAwardTCTK(7)
@@ -652,32 +653,32 @@ function UuDaiServerMoi(nOrder)
 			elseif nOrder == 3 then
 				GiveAwardTCTK(9)
 			elseif nOrder == 4 then
-				local tbUuDai = {item = {{gdp = {0,102,24,1,1,-1,-1,-1,-1,-1,-1,-1},  name = "§«ng Ph­¬ng Long Ch©u"}}}
+				local tbUuDai = {item = {{gdp = {0,102,24,1,1,-1,-1,-1,-1,-1,-1,-1},  name = "Â§Â«ng PhÂ­Â¬ng Long ChÂ©u"}}}
 				LIB_Award:Award(tbUuDai)
 			elseif nOrder == 5 then
-				local tbUuDai = {item = {{gdp={2,1,30164+(mod(random(1,10000),20)),1000}, name = "tr¸i c©y"}}}
+				local tbUuDai = {item = {{gdp={2,1,30164+(mod(random(1,10000),20)),1000}, name = "trÂ¸i cÂ©y"}}}
 				LIB_Award:Award(tbUuDai)
 			elseif nOrder == 6 then
-				local tbUuDai = {item = {{gdp={2,1,30164+(mod(random(1,10000),20)),1000}, name = "tr¸i c©y"}}}
+				local tbUuDai = {item = {{gdp={2,1,30164+(mod(random(1,10000),20)),1000}, name = "trÂ¸i cÂ©y"}}}
 				LIB_Award:Award(tbUuDai)
 			elseif nOrder == 7 then
-				local tbUuDai = {item = {{gdp={2,1,30368,500}, name = "Cæ Linh Th¹ch"}, {gdp={2,1,30369,1000}, name = "Cæ Linh Ngäc"}}}
+				local tbUuDai = {item = {{gdp={2,1,30368,500}, name = "CÃ¦ Linh ThÂ¹ch"}, {gdp={2,1,30369,1000}, name = "CÃ¦ Linh NgÃ¤c"}}}
 				LIB_Award:Award(tbUuDai)
 			elseif nOrder == 8 then
-				local tbUuDai = {item = {{gdp={2,1,30368,1200}, name = "Cæ Linh Th¹ch"}, {gdp={2,1,30369,2000}, name = "Cæ Linh Ngäc"}}}
+				local tbUuDai = {item = {{gdp={2,1,30368,1200}, name = "CÃ¦ Linh ThÂ¹ch"}, {gdp={2,1,30369,2000}, name = "CÃ¦ Linh NgÃ¤c"}}}
 				LIB_Award:Award(tbUuDai)
 			end
 --			elseif nOrder == 9 then
---				local tbUuDai = {item = {{gdp={2,1,30164+(mod(random(1,10000),20)),1000}, name = "tr¸i c©y"}}}
+--				local tbUuDai = {item = {{gdp={2,1,30164+(mod(random(1,10000),20)),1000}, name = "trÂ¸i cÂ©y"}}}
 --				LIB_Award:Award(tbUuDai)
 --			elseif nOrder == 10 then
---				local tbUuDai = {item = {{gdp={2,1,30164+(mod(random(1,10000),20)),1000}, name = "tr¸i c©y"}}}
+--				local tbUuDai = {item = {{gdp={2,1,30164+(mod(random(1,10000),20)),1000}, name = "trÂ¸i cÂ©y"}}}
 --				LIB_Award:Award(tbUuDai)
 --			elseif nOrder == 11 then
---				local tbUuDai = {item = {{gdp={0,107,tbMatTich70caocap[nRoute][2][3],9}, name = "MËt tŞch 70 cao cÊp"}}}
+--				local tbUuDai = {item = {{gdp={0,107,tbMatTich70caocap[nRoute][2][3],9}, name = "MÃ‹t tÃch 70 cao cÃŠp"}}}
 --				LIB_Award:Award(tbUuDai)
 --			elseif nOrder == 12 then
---				local tbUuDai = {item = {{gdp={2,1,30368,500}, name = "Cæ Linh Th¹ch"}, {gdp={2,1,30369,1000}, name = "Cæ Linh Ngäc"}}}
+--				local tbUuDai = {item = {{gdp={2,1,30368,500}, name = "CÃ¦ Linh ThÂ¹ch"}, {gdp={2,1,30369,1000}, name = "CÃ¦ Linh NgÃ¤c"}}}
 --				LIB_Award:Award(tbUuDai)
 --			end
 		end
@@ -687,51 +688,51 @@ end
 --
 --function Say_NhanVuKhiVietYen()
 --	local tbListAllVietYen = {
---		[1] = {"ViÖt Yªn Phi Tinh §ao", {0,3,30001,1,1,-1,-1,-1,-1,-1,-1,-1,0}}, 
---		[2] = {"ViÖt Yªn Phi Tinh C«n", {0,5,30002,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[3] =  {"ViÖt Yªn Phi Tinh Tr­îng", {0,8,30003,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[4] =  {"ViÖt Yªn Phi Tinh Thñ", {0,0,30004,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[5] =  {"ViÖt Yªn Tr¶m NguyÖt KiÕm", {0,2,30010,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[6] =  {"ViÖt Yªn Tr¶m NguyÖt Bót", {0,9,30011,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[7] =  {"ViÖt Yªn Phi Tinh KiÕm", {0,2,30006,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[8] =  {"ViÖt Yªn Phi Tinh CÇm", {0,10,30007,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[9] =  {"ViÖt Yªn Phi Tinh Thñ", {0,0,30008,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[10] =  {"ViÖt Yªn Tr¶m NguyÖt C«n", {0,5,30009,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[11] =  {"ViÖt Yªn Phi Tinh Ch©m", {0,1,30005,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[12] =  {"ViÖt Yªn Tr¶m NguyÖt Th­¬ng", {0,6,30012,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[13] =  {"ViÖt Yªn Tr¶m NguyÖt Cung", {0,4,30013,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[14] = {"ViÖt Yªn Tr¶m NguyÖt NhÉn", {0,7,30014,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[15] = {"ViÖt Yªn Tr¶m NguyÖt Tr¶o", {0,11,30015,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[1] = {"ViÃ–t YÂªn Phi Tinh Â§ao", {0,3,30001,1,1,-1,-1,-1,-1,-1,-1,-1,0}}, 
+--		[2] = {"ViÃ–t YÂªn Phi Tinh CÂ«n", {0,5,30002,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[3] =  {"ViÃ–t YÂªn Phi Tinh TrÂ­Ã®ng", {0,8,30003,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[4] =  {"ViÃ–t YÂªn Phi Tinh ThÃ±", {0,0,30004,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[5] =  {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t KiÃ•m", {0,2,30010,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[6] =  {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t BÃ³t", {0,9,30011,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[7] =  {"ViÃ–t YÂªn Phi Tinh KiÃ•m", {0,2,30006,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[8] =  {"ViÃ–t YÂªn Phi Tinh CÃ‡m", {0,10,30007,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[9] =  {"ViÃ–t YÂªn Phi Tinh ThÃ±", {0,0,30008,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[10] =  {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t CÂ«n", {0,5,30009,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[11] =  {"ViÃ–t YÂªn Phi Tinh ChÂ©m", {0,1,30005,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[12] =  {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t ThÂ­Â¬ng", {0,6,30012,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[13] =  {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t Cung", {0,4,30013,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[14] = {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t NhÃ‰n", {0,7,30014,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[15] = {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t TrÂ¶o", {0,11,30015,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
 --	}
---	tbSay = {"Ta cÇn suy nghÜ l¹i/dlgover"}
+--	tbSay = {"Ta cÃ‡n suy nghÃœ lÂ¹i/dlgover"}
 --	for i=getn(tbListAllVietYen), 1, -1 do
 --		tinsert(tbSay,1,tbListAllVietYen[i][1].."/#NhanVuKhiVietYen("..i..")")
 --	end
---	Say("C¸c h¹ h·y chän  vò khİ tïy thİch:", getn(tbSay), unpack(tbSay))
+--	Say("CÂ¸c hÂ¹ hÂ·y chÃ¤n  vÃ² khÃ tÃ¯y thÃch:", getn(tbSay), unpack(tbSay))
 --end
 --
 --function NhanVuKhiVietYen(nOption)
 --	local tbAward = tbDieuKienUuDai[10]
 --	local tbListAllVietYen = {
---		[1] = {"ViÖt Yªn Phi Tinh §ao", {0,3,30001,1,1,-1,-1,-1,-1,-1,-1,-1,0}}, 
---		[2] = {"ViÖt Yªn Phi Tinh C«n", {0,5,30002,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[3] =  {"ViÖt Yªn Phi Tinh Tr­îng", {0,8,30003,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[4] =  {"ViÖt Yªn Phi Tinh Thñ", {0,0,30004,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[5] =  {"ViÖt Yªn Tr¶m NguyÖt KiÕm", {0,2,30010,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[6] =  {"ViÖt Yªn Tr¶m NguyÖt Bót", {0,9,30011,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[7] =  {"ViÖt Yªn Phi Tinh KiÕm", {0,2,30006,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[8] =  {"ViÖt Yªn Phi Tinh CÇm", {0,10,30007,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[9] =  {"ViÖt Yªn Phi Tinh Thñ", {0,0,30008,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[10] =  {"ViÖt Yªn Tr¶m NguyÖt C«n", {0,5,30009,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[11] =  {"ViÖt Yªn Phi Tinh Ch©m", {0,1,30005,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[12] =  {"ViÖt Yªn Tr¶m NguyÖt Th­¬ng", {0,6,30012,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[13] =  {"ViÖt Yªn Tr¶m NguyÖt Cung", {0,4,30013,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[14] = {"ViÖt Yªn Tr¶m NguyÖt NhÉn", {0,7,30014,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
---		[15] = {"ViÖt Yªn Tr¶m NguyÖt Tr¶o", {0,11,30015,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[1] = {"ViÃ–t YÂªn Phi Tinh Â§ao", {0,3,30001,1,1,-1,-1,-1,-1,-1,-1,-1,0}}, 
+--		[2] = {"ViÃ–t YÂªn Phi Tinh CÂ«n", {0,5,30002,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[3] =  {"ViÃ–t YÂªn Phi Tinh TrÂ­Ã®ng", {0,8,30003,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[4] =  {"ViÃ–t YÂªn Phi Tinh ThÃ±", {0,0,30004,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[5] =  {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t KiÃ•m", {0,2,30010,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[6] =  {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t BÃ³t", {0,9,30011,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[7] =  {"ViÃ–t YÂªn Phi Tinh KiÃ•m", {0,2,30006,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[8] =  {"ViÃ–t YÂªn Phi Tinh CÃ‡m", {0,10,30007,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[9] =  {"ViÃ–t YÂªn Phi Tinh ThÃ±", {0,0,30008,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[10] =  {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t CÂ«n", {0,5,30009,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[11] =  {"ViÃ–t YÂªn Phi Tinh ChÂ©m", {0,1,30005,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[12] =  {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t ThÂ­Â¬ng", {0,6,30012,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[13] =  {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t Cung", {0,4,30013,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[14] = {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t NhÃ‰n", {0,7,30014,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
+--		[15] = {"ViÃ–t YÂªn TrÂ¶m NguyÃ–t TrÂ¶o", {0,11,30015,1,1,-1,-1,-1,-1,-1,-1,-1,0}},
 --	}
 --	if DelItem(tbAward["tbitem"][1], tbAward["tbitem"][2], tbAward["tbitem"][3], tbAward["tbitem"][4]) == 1 then
 --		gf_SetTaskBit(TSK_TOP_LEVEL, tbAward["nBit"], 1)
---		gf_AddItemEx2(tbListAllVietYen[nOption][2], tbListAllVietYen[nOption][1], "Uu Dai "..szLOGSERVERNAME, "nhËn")
+--		gf_AddItemEx2(tbListAllVietYen[nOption][2], tbListAllVietYen[nOption][1], "Uu Dai "..szLOGSERVERNAME, "nhÃ‹n")
 --	end
 --end
 
@@ -742,30 +743,30 @@ end
 function PhatThuongBangHoi()
 	local nDate = tonumber(date("%Y%m%d"))
 	if nDate < 20130519 then
-		Talk(1,"","Ch­a ®Õn ngµy trao th­ëng, phiÒn C¸c h¹ ®îi ®Õn 19-05-2013 nhĞ.")
+		Talk(1,"","ChÂ­a Â®Ã•n ngÂµy trao thÂ­Ã«ng, phiÃ’n CÂ¸c hÂ¹ Â®Ã®i Â®Ã•n 19-05-2013 nhÃ.")
 		return 0
 	end
 	
 	local nTongMember = IsTongMember();
 	if nTongMember == 0 then
-		Talk(1,"","PhÇn th­ëng nµy chØ dµnh cho bang héi, C¸c h¹ h·y gia nhËp bang héi tr­íc ®· nhĞ.")
+		Talk(1,"","PhÃ‡n thÂ­Ã«ng nÂµy chÃ˜ dÂµnh cho bang hÃ©i, CÂ¸c hÂ¹ hÂ·y gia nhÃ‹p bang hÃ©i trÂ­Ã­c Â®Â· nhÃ.")
 		return 0
 	end
 		
 	local nJoinTime = GetJoinTongTime();	
 	local nDayCount = floor((GetTime()-nJoinTime)/(3600*24));
 	if nDayCount <  15 then
-		Talk(1,"","Thêi gian gia nhËp cña c¸c h¹ İt h¬n 15 ngµy, kh«ng thÓ nhËn th­ëng nµy!")
+		Talk(1,"","ThÃªi gian gia nhÃ‹p cÃ±a cÂ¸c hÂ¹ Ãt hÂ¬n 15 ngÂµy, khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng nÂµy!")
 		return 0
 	end
 	
 	if gf_GetTaskBit(TSK_TOP_LEVEL, 21) == 1 then
-		Talk(1,"","C¸c h¹ ®· nhËn phÇn th­ëng nµy råi.")
+		Talk(1,"","CÂ¸c hÂ¹ Â®Â· nhÃ‹n phÃ‡n thÂ­Ã«ng nÂµy rÃ¥i.")
 		return 0
 	end
 	
 	if gf_Judge_Room_Weight(25,2100) ~=1 then
-		Talk(1,"","C¸c h¹ cÇn chuÈn bŞ 25 « hµnh trang vµ 2100 søc lùc ®Ó nhËn th­ëng.")
+		Talk(1,"","CÂ¸c hÂ¹ cÃ‡n chuÃˆn bÃ 25 Â« hÂµnh trang vÂµ 2100 sÃ¸c lÃ¹c Â®Ã“ nhÃ‹n thÂ­Ã«ng.")
 		return 0
 	end
 	
@@ -775,25 +776,25 @@ function PhatThuongBangHoi()
 	tbTenBang = LIB_txtData.tbTextData
 	if tbTenBang[1] ~= nil and tbTenBang[1][1] ~= nil then
 		if tbTenBang[1][1] ~= szTongName then
-			Talk(1,"","PhÇn th­ëng nµy ®· trao cho bang ".. tbTenBang[1][1])
+			Talk(1,"","PhÃ‡n thÂ­Ã«ng nÂµy Â®Â· trao cho bang ".. tbTenBang[1][1])
 			return 0
 		end
 	else
 		if GetTongPopuLadder() ~= 1 then
-			Talk(1,"","PhÇn th­ëng nµy chØ trao cho bang héi xÕp h¹ng 1 nh©n khİ.")
+			Talk(1,"","PhÃ‡n thÂ­Ã«ng nÂµy chÃ˜ trao cho bang hÃ©i xÃ•p hÂ¹ng 1 nhÂ©n khÃ.")
 			return 0
 		end
 		LIB_txtData:AddLine(szTongName)
 	end
 	
 	LIB_Award.szLogTitle = "TOP BANG HOI "..szLOGSERVERNAME
-	LIB_Award.szLogAction = "nhËn"
+	LIB_Award.szLogAction = "nhÃ‹n"
 	gf_SetTaskBit(TSK_TOP_LEVEL, 21, 1)
 	local tbThuongBangHoi = {item = {
-		{gdp={2,0,189,2003,1}, name = "QuÕ Hoa Töu"},
-		{gdp={2,1,1208,2,1}, name = "P_th­ëng C«ng Thµnh (th¾ng)"},
-		{gdp={2,1,1210,20,1}, name = "B¶o r­¬ng Tµi nguyªn"},
-		{gdp={0,105,33,1,4,-1,-1,-1,-1,-1,-1,-1}, name = "Niªn Thó", nExpired = 90*24*60*60}
+		{gdp={2,0,189,2003,1}, name = "QuÃ• Hoa TÃ¶u"},
+		{gdp={2,1,1208,2,1}, name = "P_thÂ­Ã«ng CÂ«ng ThÂµnh (thÂ¾ng)"},
+		{gdp={2,1,1210,20,1}, name = "BÂ¶o rÂ­Â¬ng TÂµi nguyÂªn"},
+		{gdp={0,105,33,1,4,-1,-1,-1,-1,-1,-1,-1}, name = "NiÂªn ThÃ³", nExpired = 90*24*60*60}
 	}}
 	LIB_Award:Award(tbThuongBangHoi)
 end
@@ -813,12 +814,12 @@ function CS_TopAward(nOption)
 	end
 	local nChuyenSinh = gf_GetTaskByte(TRANSLIFE_TASK_ID, TRANSLIFE_BYTE_COUNT);
 	if nChuyenSinh ~= tbOps[nOption]["nCS"] or GetLevel() < 99 then
-		Talk(1,"",strNpcName.."§iÒu kiÖn chuyÓn sinh hoÆc ®¼ng cÊp ch­a ®óng, kh«ng thÓ ®¨ng kı nhËn mËt tŞch.")
+		Talk(1,"",strNpcName.."Â§iÃ’u kiÃ–n chuyÃ“n sinh hoÃ†c Â®Â¼ng cÃŠp chÂ­a Â®Ã³ng, khÂ«ng thÃ“ Â®Â¨ng kÃ½ nhÃ‹n mÃ‹t tÃch.")
 		return 0
 	end
 	
 	if gf_GetTaskBit(TSK_TOP_LEVEL, tbOps[nOption]["nBit"]) == 1 then
-		Talk(1,"","C¸c h¹ ®· ®¨ng kı nhËn phÇn th­ëng nµy råi.")
+		Talk(1,"","CÂ¸c hÂ¹ Â®Â· Â®Â¨ng kÃ½ nhÃ‹n phÃ‡n thÂ­Ã«ng nÂµy rÃ¥i.")
 		return 0
 	end
 	
@@ -826,7 +827,7 @@ function CS_TopAward(nOption)
 	LIB_txtData:LoadData()
 	local nAward = LIB_txtData.tbTextData[tonumber(nOption)]
 	if nAward >= 100 then
-		Talk(1, "", strNpcName.."§· cã ®ñ 100 cao thñ ®¨ng kı nhËn phÇn th­ëng nµy, c¸c h¹ h·y cè g¾ng chiÕm phÇn th­ëng kh¸c nhĞ!");
+		Talk(1, "", strNpcName.."Â§Â· cÃ£ Â®Ã± 100 cao thÃ± Â®Â¨ng kÃ½ nhÃ‹n phÃ‡n thÂ­Ã«ng nÂµy, cÂ¸c hÂ¹ hÂ·y cÃ¨ gÂ¾ng chiÃ•m phÃ‡n thÂ­Ã«ng khÂ¸c nhÃ!");
 		return 0
 	end
 	
@@ -835,20 +836,20 @@ function CS_TopAward(nOption)
 		LIB_txtData:Init("danhsachnhanthuong.txt")
 		local szLogAward = GetAccount().."	"..GetName().."	"..GetPlayerRoute().."	"..nTongLieu.."	"..nChuyenSinh.."	TOPCS"..nOption.."	"..date("%Y-%m-%d %H:%M:%S")
 		LIB_txtData:AddLine(szLogAward)
-		Talk(1,"","C¸c h¹ lµ ng­êi thø "..(nAward+1).." ®¨ng kı nhËn mËt tŞch thµnh c«ng.")
+		Talk(1,"","CÂ¸c hÂ¹ lÂµ ngÂ­Ãªi thÃ¸ "..(nAward+1).." Â®Â¨ng kÃ½ nhÃ‹n mÃ‹t tÃch thÂµnh cÂ«ng.")
 	end
 end
 
 
 function get_route_award_by_level_menu()
 	local tbSay = {}
-	tinsert(tbSay, "NhËn th­ëng Thóy Yªn Linh N÷ cÊp 92/#get_route_award_by_level_done(92)")
-	tinsert(tbSay, "NhËn th­ëng Thóy Yªn Linh N÷ cÊp 93/#get_route_award_by_level_done(93)")
-	tinsert(tbSay, "NhËn th­ëng Thóy Yªn Linh N÷ cÊp 94/#get_route_award_by_level_done(94)")
-	tinsert(tbSay, "NhËn th­ëng Thóy Yªn Linh N÷ cÊp 96/#get_route_award_by_level_done(96)")
-	tinsert(tbSay, "NhËn th­ëng Thóy Yªn Linh N÷ cÊp 99/#get_route_award_by_level_done(99)")
-	tinsert(tbSay, "Ta ch­a muèn nhËn ngay/gf_DoNothing")
-	Say("§Ö tö ph¸i C«n L«n nÕu ®¹t ®Õn ®¼ng cÊp nhÊt ®Şnh sÏ ®­îc ta tÆng th­ëng ®Æc biÖt, dÜ nhiªn còng ph¶i cÇn chót thï lao.", getn(tbSay), tbSay)
+	tinsert(tbSay, "NhÃ‹n thÂ­Ã«ng ThÃ³y YÂªn Linh NÃ· cÃŠp 92/#get_route_award_by_level_done(92)")
+	tinsert(tbSay, "NhÃ‹n thÂ­Ã«ng ThÃ³y YÂªn Linh NÃ· cÃŠp 93/#get_route_award_by_level_done(93)")
+	tinsert(tbSay, "NhÃ‹n thÂ­Ã«ng ThÃ³y YÂªn Linh NÃ· cÃŠp 94/#get_route_award_by_level_done(94)")
+	tinsert(tbSay, "NhÃ‹n thÂ­Ã«ng ThÃ³y YÂªn Linh NÃ· cÃŠp 96/#get_route_award_by_level_done(96)")
+	tinsert(tbSay, "NhÃ‹n thÂ­Ã«ng ThÃ³y YÂªn Linh NÃ· cÃŠp 99/#get_route_award_by_level_done(99)")
+	tinsert(tbSay, "Ta chÂ­a muÃ¨n nhÃ‹n ngay/gf_DoNothing")
+	Say("Â§Ã– tÃ¶ phÂ¸i CÂ«n LÂ«n nÃ•u Â®Â¹t Â®Ã•n Â®Â¼ng cÃŠp nhÃŠt Â®Ãnh sÃ Â®Â­Ã®c ta tÃ†ng thÂ­Ã«ng Â®Ã†c biÃ–t, dÃœ nhiÂªn cÃ²ng phÂ¶i cÃ‡n chÃ³t thÃ¯ lao.", getn(tbSay), tbSay)
 end
 
 
@@ -859,30 +860,30 @@ function get_route_award_by_level_done(nOption)
 			[94] = {fn="TraoNguLongTuongQuan_TrangSuc()"},
 			[96] = {fn="ThuongVuKhi_ThuyYenLinhNu()"},
 			[99] = {item={
-						{gdp={2,1,30345,1,1}, name = "ChuyÓn Sinh §¬n"}, 
-						{gdp={2,0,1083,3,1}, name = "Th¸i DŞch Hçn Nguyªn C«ng Phæ"}, 
-						{gdp={2,95,204,4,1}, name = "Thiªn Cang LÖnh"}},
+						{gdp={2,1,30345,1,1}, name = "ChuyÃ“n Sinh Â§Â¬n"}, 
+						{gdp={2,0,1083,3,1}, name = "ThÂ¸i DÃch HÃ§n NguyÂªn CÂ«ng PhÃ¦"}, 
+						{gdp={2,95,204,4,1}, name = "ThiÂªn Cang LÃ–nh"}},
 					nChankhi = 150000,
 			},
 	}
 	if GetPlayerRoute() == 0 then
-		Talk(1,"",strNpcName.."Ng­¬i ch­a gia nhËp hÖ ph¸i, kh«ng thÓ nhËn th­ëng..")
+		Talk(1,"",strNpcName.."NgÂ­Â¬i chÂ­a gia nhÃ‹p hÃ– phÂ¸i, khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng..")
 		return
 	end
 	if GetLevel() < nOption then
-		Talk(1,"",strNpcName.."§¼ng cÊp ch­a ®ñ, kh«ng thÓ nhËn th­ëng..")	
+		Talk(1,"",strNpcName.."Â§Â¼ng cÃŠp chÂ­a Â®Ã±, khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng..")	
 		return
 	end
 	if IsPlayerDeath() == 1 then
-		Talk(1,"",strNpcName.."Tr¹ng th¸i hiÖn t¹i kh«ng thÓ nhËn th­ëng.")	
+		Talk(1,"",strNpcName.."TrÂ¹ng thÂ¸i hiÃ–n tÂ¹i khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.")	
 		return
 	end
 	if IsStalling() == 1 then
-		Talk(1,"",strNpcName.."Tr¹ng th¸i hiÖn t¹i kh«ng thÓ nhËn th­ëng.")	
+		Talk(1,"",strNpcName.."TrÂ¹ng thÂ¸i hiÃ–n tÂ¹i khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.")	
 		return
 	end
 	if TopCheckSkill(tFactionSkillInfo,20) == 0 then
-		Talk(1, "", strNpcName.."C¸c h¹ ch­a luyÖn thµnh 20 cÊp vâ c«ng trÊn ph¸i.");
+		Talk(1, "", strNpcName.."CÂ¸c hÂ¹ chÂ­a luyÃ–n thÂµnh 20 cÃŠp vÃ¢ cÂ«ng trÃŠn phÂ¸i.");
 		return	
 	end
 	local tbDieuKien = {
@@ -904,7 +905,7 @@ function get_route_award_by_level_done(nOption)
 	end
 	
 	if gf_Judge_Room_Weight(tbDieuKien[nOption]["Slot"],500) ~= 1 then
-		Talk(1,"",strNpcName.."CÇn ".. tbDieuKien[nOption]["Slot"] .." hµnh trang , 500 søc lùc. Vui lßng s¾p xÕp l¹i.")
+		Talk(1,"",strNpcName.."CÃ‡n ".. tbDieuKien[nOption]["Slot"] .." hÂµnh trang , 500 sÃ¸c lÃ¹c. Vui lÃŸng sÂ¾p xÃ•p lÂ¹i.")
 		return
 	end
 	
@@ -915,62 +916,62 @@ function get_route_award_by_level_done(nOption)
 	local nSumon = GetTask(336)
 	
 	if gf_GetTaskBit(TSK_BONUS_CONLON, tbDieuKien[nOption]["Bit"]) ~= 0 then
-		Talk(1,"", strNpcName.."C¸c h¹ ®· nhËn phÇn th­ëng nµy råi.")
+		Talk(1,"", strNpcName.."CÂ¸c hÂ¹ Â®Â· nhÃ‹n phÃ‡n thÂ­Ã«ng nÂµy rÃ¥i.")
 		return 0
 	end
 	
 	if nRoute ~= tbDieuKien[nOption]["Route"] then
-		Talk(1,"", strNpcName.."HÖ ph¸i kh«ng phï hîp, kh«ng thÓ nhËn th­ëng.")
+		Talk(1,"", strNpcName.."HÃ– phÂ¸i khÂ«ng phÃ¯ hÃ®p, khÂ«ng thÃ“ nhÃ‹n thÂ­Ã«ng.")
 		return 0
 	end
 	
 	if nDanhvong < tbDieuKien[nOption]["Danhvong"] then
-		Talk(1,"", strNpcName.."Danh väng ch­a ®¹t møc "..tbDieuKien[nOption]["Danhvong"]..", ta ch­a thÓ trao th­ëng cho c¸c h¹.")
+		Talk(1,"", strNpcName.."Danh vÃ¤ng chÂ­a Â®Â¹t mÃ¸c "..tbDieuKien[nOption]["Danhvong"]..", ta chÂ­a thÃ“ trao thÂ­Ã«ng cho cÂ¸c hÂ¹.")
 		return 0
 	end
 	
 	if nSumon < tbDieuKien[nOption]["Sumon"] then
-		Talk(1,"", strNpcName.."§iÓm cèng hiÕn s­ m«n ch­a ®¹t møc "..tbDieuKien[nOption]["Sumon"]..", ta ch­a thÓ trao th­ëng cho c¸c h¹.")
+		Talk(1,"", strNpcName.."Â§iÃ“m cÃ¨ng hiÃ•n sÂ­ mÂ«n chÂ­a Â®Â¹t mÃ¸c "..tbDieuKien[nOption]["Sumon"]..", ta chÂ­a thÃ“ trao thÂ­Ã«ng cho cÂ¸c hÂ¹.")
 		return 0
 	end
 	
 	if abs(nQuanham) < abs(tbDieuKien[nOption]["Quanham"]) then
-		Talk(1,"", strNpcName.."Qu©n hµm ch­a ®ñ ®iÒu kiÖn, ng­¬i h·y cè g¾ng thªm.")
+		Talk(1,"", strNpcName.."QuÂ©n hÂµm chÂ­a Â®Ã± Â®iÃ’u kiÃ–n, ngÂ­Â¬i hÂ·y cÃ¨ gÂ¾ng thÂªm.")
 		return 0
 	end
 	
 	if abs(nQuancong) < abs(tbDieuKien[nOption]["Quancong"]) then
-		Talk(1,"", strNpcName.."Qu©n c«ng ch­a ®ñ "..abs(tbDieuKien[nOption]["Quancong"])..", ng­¬i h·y cè g¾ng thªm.")
+		Talk(1,"", strNpcName.."QuÂ©n cÂ«ng chÂ­a Â®Ã± "..abs(tbDieuKien[nOption]["Quancong"])..", ngÂ­Â¬i hÂ·y cÃ¨ gÂ¾ng thÂªm.")
 		return 0
 	end
 	
 	if GetCash() < tbMaterial[nOption]["Gold"]*10000 then
-		Talk(1,"", strNpcName.."Ng­¬i ch­a ®em ®ñ "..tbMaterial[nOption]["Gold"].." vµng, h·y kiÓm tra l¹i nhĞ.")
+		Talk(1,"", strNpcName.."NgÂ­Â¬i chÂ­a Â®em Â®Ã± "..tbMaterial[nOption]["Gold"].." vÂµng, hÂ·y kiÃ“m tra lÂ¹i nhÃ.")
 		return 0
 	end
 	
 	if GetItemCount(2,1,30230) < tbMaterial[nOption]["Xu"] then
-		Talk(1,"", strNpcName.."Ng­¬i ch­a ®em ®ñ "..tbMaterial[nOption]["Xu"].." xu vËt phÈm, h·y kiÓm tra l¹i nhĞ.")
+		Talk(1,"", strNpcName.."NgÂ­Â¬i chÂ­a Â®em Â®Ã± "..tbMaterial[nOption]["Xu"].." xu vÃ‹t phÃˆm, hÂ·y kiÃ“m tra lÂ¹i nhÃ.")
 		return 0
 	end
 	
 	if GetExp() < tbMaterial[nOption]["Exp"] then
-		Talk(1,"", strNpcName.."Ng­¬i ch­a tİch lòy ®ñ "..tbMaterial[nOption]["Exp"].." ®iÓm kinh nghiÖm, h·y cè g¾ng thªm.")
+		Talk(1,"", strNpcName.."NgÂ­Â¬i chÂ­a tÃch lÃ²y Â®Ã± "..tbMaterial[nOption]["Exp"].." Â®iÃ“m kinh nghiÃ–m, hÂ·y cÃ¨ gÂ¾ng thÂªm.")
 		return 0
 	end
 
---	****************** Trao th­ëng *************************
+--	****************** Trao thÂ­Ã«ng *************************
 	ModifyReputation(-tbMaterial[nOption]["Danhvong"],0)
 	SetTask(336, GetTask(336) - tbMaterial[nOption]["Sumon"])
-	Msg2Player("B¹n bŞ trõ "..tbMaterial[nOption]["Sumon"].." ®iÓm s­ m«n")
+	Msg2Player("BÂ¹n bÃ trÃµ "..tbMaterial[nOption]["Sumon"].." Â®iÃ“m sÂ­ mÂ«n")
 	Pay(tbMaterial[nOption]["Gold"]*10000)
 	DelItem(2,1,30230,tbMaterial[nOption]["Xu"])
-	Msg2Player("B¹n bŞ trõ "..tbMaterial[nOption]["Xu"].." xu vËt phÈm")
+	Msg2Player("BÂ¹n bÃ trÃµ "..tbMaterial[nOption]["Xu"].." xu vÃ‹t phÃˆm")
 	ModifyExp(-tbMaterial[nOption]["Exp"])
-	Msg2Player("B¹n bŞ trõ "..tbMaterial[nOption]["Exp"].." ®iÓm kinh nghiÖm")
+	Msg2Player("BÂ¹n bÃ trÃµ "..tbMaterial[nOption]["Exp"].." Â®iÃ“m kinh nghiÃ–m")
 	gf_SetTaskBit(TSK_BONUS_CONLON, tbDieuKien[nOption]["Bit"], 1, 0)
 	LIB_Award.szLogTitle = "NHAN THUONG DUA TOP "..szLOGSERVERNAME
-	LIB_Award.szLogAction = "nhËn"
+	LIB_Award.szLogAction = "nhÃ‹n"
 	LIB_Award:Award(tbAward[nOption])
-	gf_WriteLogEx("NHAN THUONG DUA TOP "..szLOGSERVERNAME, "nhËn", 1, "PhÇn th­ëng Thóy Yªn Linh N÷ cÊp "..nOption)
+	gf_WriteLogEx("NHAN THUONG DUA TOP "..szLOGSERVERNAME, "nhÃ‹n", 1, "PhÃ‡n thÂ­Ã«ng ThÃ³y YÂªn Linh NÃ· cÃŠp "..nOption)
 end
